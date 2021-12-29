@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Email
+{% endblock %}
+
+{% block main %}
+    <form action="/addemail" method="post">
+        <div class= "form-group">
+            <input autocomplete="off" autofocus class="form-control" name="email" placeholder="Email" type="email">
+            <button class="btn btn-primary" type="submit">Add/Change Email</button>
+        </div>            
+    </form>
+{% endblock %}

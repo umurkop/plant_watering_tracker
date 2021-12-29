@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete Plant
+{% endblock %}
+
+{% block main %}
+    <form action="/deleteplant" method="post">        
+        <div class="form-group">            
+            <label for="plant">Select the Plant You Want to Delete:</label>
+            <select name="plant">
+                {% for plant in plants %}
+                 <option>{{ plant["name"] }}</option>
+                {% endfor %}
+            </select>
+        </div>                
+        <button class="btn btn-primary" type="submit">Delete It!</button>
+    </form>
+{% endblock %}

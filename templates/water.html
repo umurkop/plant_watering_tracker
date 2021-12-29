@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Water
+{% endblock %}
+
+{% block main %}
+    <form action="/water" method="post">        
+        <div class="form-group">            
+            <label for="plant">Select Your Plant:</label>
+            <select name="plant">
+                {% for plant in plants%}
+                 <option>{{ plant["name"] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="date">Select Watering Date:</label>
+            <input type="date" name="date">            
+        </div>        
+        <button class="btn btn-primary" type="submit">Water</button>
+    </form>
+{% endblock %}

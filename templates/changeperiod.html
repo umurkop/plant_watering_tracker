@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change Period
+{% endblock %}
+
+{% block main %}
+    <form action="/changeperiod" method="post">
+        <div class="form-group">            
+            <label for="plant">Select Your Plant:</label>
+            <select name="plant">
+                {% for plant in plants %}
+                 <option>{{ plant["name"] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="newperiod" placeholder="New Watering Period" type="text">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Change It</button>
+    </form>
+{% endblock %}

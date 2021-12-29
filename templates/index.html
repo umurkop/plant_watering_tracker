@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>            
+            <th>Name</th>
+            <th>Watering Period (days)</th>
+            <th>Last Watering</th>
+            <th>Next Watering</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for plant in plants %}
+        <tr>
+            <td> {{ plant["name"] }} </td>
+            <td> {{ plant["period"] }} </td>
+            <td> {{ plant["last"] }} </td>
+            <td> {{ plant["next"] }} </td>            
+        </tr>
+        {% endfor %}        
+    </tbody>    
+</table>
+{% endblock %}
